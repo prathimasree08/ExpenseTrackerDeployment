@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="msg"></div>
+        <div class="form-wrap">
+            <h1>Sign Up </h1>
+            <form class="signup-form">
+                <div class="form-content">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name"placeholder="Enter Your Name" autocomplete="on" required>
+                </div>
+                <div class="form-content">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" autocomplete="on" required> 
+                </div>
+                <div class="form-content">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" autocomplete="new-password" required>
+                </div>
+                <div class="form-content">
+                    <label for="password2">Confirm Password:</label>
+                    <input type="password" name="password2" id="password2" placeholder="ReEnter your Password" autocomplete="new-password" required>
+                </div>
+
+                <button type="submit" class="btn">Sign Up</button>
+
+                
+            </form>
+        </div>
+        <footer>
+            <p>Already have an account?   <a href="../Login/login.html"> Login</a></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" ></script>
+</body>
+</html>

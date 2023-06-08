@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="msg"></div>
+        <div class="form-wrap">
+            <h1>Log In</h1>
+            
+            <form class="login-form">
+                <div class="form-content">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="on" required>
+                </div>
+                <div class="form-content">
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id = "password" placeholder="Enter your password" autocomplete="on" required>
+
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <button id="forgot-password" style="margin-top: 5px;">Forgot Password?</button>
+                
+            </form>
+        </div>
+        <footer>
+            <p>Don't have an account? <a href="../SignUp/index.html">SignUp</a></p>
+        </footer>
+    </div>
+    <script src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" ></script>
+</body>
+</html>
