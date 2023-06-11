@@ -11,14 +11,14 @@ homeBtn.addEventListener("click", function home() {
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await axios.get("http://localhost:4000/user/expense", {
+    const response = await axios.get("http://18.212.51.156:4000/user/expense", {
       headers: { Authorization: token },
     });
     response.data.forEach((expense) => {
       const newRow = createTableRow(expense);
       table.appendChild(newRow);
     });
-    const links = await axios.get("http://localhost:4000/user/downloadlink", {
+    const links = await axios.get("http://18.212.51.156:4000/user/downloadlink", {
       headers: { Authorization: token },
     });
     links.data.forEach((link) => {
@@ -89,7 +89,7 @@ downloadBtn.addEventListener("click", onDownload);
 
 async function onDownload() {
   try {
-    const response = await axios.get("http://localhost:4000/user/download", {
+    const response = await axios.get("http://18.212.51.156:4000/user/download", {
       headers: { Authorization: token },
     });
     // console.log(response)

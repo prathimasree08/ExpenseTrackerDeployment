@@ -5,7 +5,7 @@ const Email = document.querySelector("#email");
 const Password = document.querySelector("#password");
 const Password2 = document.querySelector("#password2");
 
-let url = "http://localhost:4000/user/signup";
+let url = "http://18.212.51.156:4000/user/signup";
 
 myForm.addEventListener("submit", onSubmit);
 

@@ -17,7 +17,7 @@ async function onSubmit(e) {
     };
     console.log(email);
     const response = await axios.post(
-      "http://localhost:4000/password/forgotpassword",
+      "http://18.212.51.156:4000/password/forgotpassword",
       email
     );
     if (response.status === 200) {

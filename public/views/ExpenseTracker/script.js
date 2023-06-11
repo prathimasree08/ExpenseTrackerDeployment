@@ -37,7 +37,7 @@ const page = 1;
 window.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await axios.get(
-      `http://localhost:4000/user/expense/page/?page=${page}`,
+      `http://18.212.51.156:4000/user/expense/page/?page=${page}`,
       {
         headers: {
           Authorization: token,
@@ -96,7 +96,7 @@ function showPagination(response) {
 async function getPage(page) {
   try {
     const response = await axios.get(
-      `http://localhost:4000/user/expense/page/?page=${page}`,
+      `http://18.212.51.156:4000/user/expense/page/?page=${page}`,
       {
         headers: {
           Authorization: token,
@@ -145,7 +145,7 @@ function showOnScreen(user) {
 
 async function isPremium() {
   try {
-    const user = await axios.get("http://localhost:4000/user/status", {
+    const user = await axios.get("http://18.212.51.156:4000/user/status", {
       headers: { Authorization: token },
     });
     // console.log(user)
@@ -168,7 +168,7 @@ async function showLeaderBoard(e) {
   try {
     leaderBoard1.style.display = "block";
     const users = await axios.get(
-      "http://localhost:4000/premium/leadershipboard",
+      "http://18.212.51.156:4000/premium/leadershipboard",
       { headers: { Authorization: token } }
     );
     // console.log(users);
@@ -194,7 +194,7 @@ async function showTotalExpense() {
   let sum = 0;
   const title = document.getElementById("expense-title");
   try {
-    const response = await axios.get("http://localhost:4000/user/expense", {
+    const response = await axios.get("http://18.212.51.156:4000/user/expense", {
       headers: { Authorization: token },
     });
     // console.log(response)
@@ -227,7 +227,7 @@ async function onSubmit(e) {
     };
     try {
       const response = await axios.post(
-        "http://localhost:4000/user/expense",
+        "http://18.212.51.156:4000/user/expense",
         userExpense,
         {
           headers: {
@@ -253,7 +253,7 @@ async function removeItem(e) {
       if (confirm("Are You Sure?")) {
         var li = e.target.parentElement;
         id = li.id;
-        await axios.delete(`http://localhost:4000/user/delete/${id}`, {
+        await axios.delete(`http://18.212.51.156:4000/user/delete/${id}`, {
           headers: { Authorization: token },
         });
         expense.removeChild(li);
@@ -273,7 +273,7 @@ async function editUser(e) {
       var li = e.target.parentElement;
       id = li.id;
       const response = await axios.get(
-        `http://localhost:4000/user/edit/${id}`,
+        `http://18.212.51.156:4000/user/edit/${id}`,
         { headers: { Authorization: token } }
       );
       console.log(response);
@@ -300,7 +300,7 @@ async function updateItem(e) {
   };
   try {
     const response = await axios.put(
-      `http://localhost:4000/user/edit/${id}`,
+      `http://18.212.51.156:4000/user/edit/${id}`,
       updatedExpense,
       { headers: { Authorization: token } }
     );
@@ -320,7 +320,7 @@ async function payment(e) {
   try {
     if (e.target.classList.contains("membership")) {
       const response = await axios.get(
-        "http://localhost:4000/purchase/premium",
+        "http://18.212.51.156:4000/purchase/premium",
         { headers: { Authorization: token } }
       );
       // console.log(response.data.order.id)
@@ -329,7 +329,7 @@ async function payment(e) {
         order_id: response.data.order.id,
         handler: async function (response) {
           await axios.post(
-            "http://localhost:4000/purchase/updatetransactionstatus",
+            "http://18.212.51.156:4000/purchase/updatetransactionstatus",
             {
               order_id: options.order_id,
               payment_id: response.razorpay_payment_id,
@@ -353,7 +353,7 @@ async function payment(e) {
     console.log(response);
     alert("Transaction Failed");
     await axios.post(
-      "http://localhost:4000/purchase/transactionfailstatus",
+      "http://18.212.51.156:4000/purchase/transactionfailstatus",
       response.error.metadata,
       { headers: { Authorization: token } }
     );
