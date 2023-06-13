@@ -33,7 +33,7 @@ exports.postForgetPassword = (req, res, next) => {
     .then((data) => {
       const sender = {
         name: "Reset Password",
-        email: "shivkumar9334@gmail.com",
+        email: "prathimasree99@gmail.com",
       };
       const recivers = [
         {
